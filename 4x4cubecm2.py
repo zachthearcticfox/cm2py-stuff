@@ -1,4 +1,5 @@
 import cm2py as cm2
+import random as rn
 
 save = cm2.Save()
 
@@ -6,22 +7,18 @@ blocks = []
 
 connections = []
 
-blocks.append(save.addBlock(cm2.FLIPFLOP, (0,0,0)))
-blocks.append(save.addBlock(cm2.FLIPFLOP, (2,0,0)))
+pos = [0,0,0]
 
-blocks.append(save.addBlock(cm2.AND, (0,0,2)))
-blocks.append(save.addBlock(cm2.XOR, (2,0,2)))
+for i in range(65):
+    blocks.append(save.addBlock(cm2.TILE, tuple(pos), False, [rn.randint(0, 255), rn.randint(0, 255), rn.randint(0,255)]))
+    if i % 4 == 0 and i != 0 and i % 16 != 0:
+        pos[2] += 2
+        pos[0] = 0
+    elif i % 16 == 0 and i != 0: 
+        pos[1] += 2
+        pos[0], pos[2] = 0, 0
+    elif i % 4 != 0 and i % 16 != 0: pos[0] += 2
 
-connections.append(save.addConnection(blocks[0], blocks[2]))
-connections.append(save.addConnection(blocks[1], blocks[3]))
-connections.append(save.addConnection(blocks[0], blocks[3]))
-connections.append(save.addConnection(blocks[1], blocks[2]))
 
-blocks.append(save.addBlock(cm2.LED, (0,0,4)))
-blocks.append(save.addBlock(cm2.LED, (2,0,4)))
-
-connections.append(save.addConnection(blocks[2], blocks[4]))
-connections.append(save.addConnection(blocks[3], blocks[5]))
-
-saveString = save.exportSave()
-print(saveString)
+asciisave = save.exportSave()
+print(asciisave)
