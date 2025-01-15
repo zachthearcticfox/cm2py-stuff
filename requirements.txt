@@ -1,0 +1,3 @@
+pyperclip
+cm2py
+pillow
