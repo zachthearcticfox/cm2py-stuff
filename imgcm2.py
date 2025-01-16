@@ -37,7 +37,3 @@ for i in getPixels():
 saveString = save.exportSave()
 print('Copied save to clipboard')       
 cb.copy(saveString)
-
-_=input('Show Image in default image editor? (Y/n)')
-if _ != 'n':
-    img.show()
