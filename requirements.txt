@@ -1,3 +1,5 @@
 pyperclip
 cm2py
 image
+numpy
+scipy
