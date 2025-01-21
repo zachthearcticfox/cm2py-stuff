@@ -11,10 +11,22 @@ textascii = [ord(i) for i in text]
 
 print(textascii)
 
-count = 0
+isy = [False,False]
+
+countx = 0
+county = 0
 for i in textascii:
-    blocks.append(save.addBlock(cm2.TEXT, (count,0,0), False, [i]))
-    count += 1
+    if isy[0] == False and i == 92:
+        isy[0] = True
+        continue
+    elif isy[0] == True and isy[1] == False and i == 110:
+        isy[1] = True
+        isy = [False,False]
+        countx = 0
+        county += 1
+        continue
+    blocks.append(save.addBlock(cm2.TEXT, (countx,0,county), False, [i]))
+    countx += 1
 
 saveString = save.exportSave()
 print(saveString)
