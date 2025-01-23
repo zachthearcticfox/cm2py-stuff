@@ -5,7 +5,9 @@ save = cm2.Save()
 blocks = []
 connections = []
 
-with open('dogobj/dogobj/13466_Canaan_Dog_v1_L3.obj', 'rt') as objf:
+fnm = input('Enter File path: ')
+
+with open(fnm, 'rt') as objf:
     f = objf.read()
     lines = f.splitlines()
     for l in lines:
@@ -19,7 +21,7 @@ with open('dogobj/dogobj/13466_Canaan_Dog_v1_L3.obj', 'rt') as objf:
                 
             try:
                 splitl[1], splitl[2] = splitl[2], splitl[1]
-                blocks.append(save.addBlock(cm2.TILE, tuple(splitl), snapToGrid=False))
+                blocks.append(save.addBlock(cm2.TILE, tuple(splitl), False, [255,255,255], snapToGrid=False))
             except AssertionError as e:
                 blocks.append(save.addBlock(cm2.TILE, (0,0,0), snapToGrid=False))
 
