@@ -6,7 +6,7 @@ from pyperclip import copy as cpy_cb
 
 rainbow_arr = []
 
-def rainbowgen(num_colors=1024):
+def rainbowgen(num_colors=2048):
     rainbow = []
     hues = np.linspace(0, 1, num_colors)
 
@@ -42,13 +42,9 @@ for i in range(len(wm)):
 
 for i in range(len(rainbow_arr)):
     j = [t for t in rainbow_arr[i]]
-    j.append(100)
-    j.append(5)
-    blocks.append(save.addBlock(cm2.LED, (px, px, px), not i, j, False))
+    j.append(2)
+    blocks.append(save.addBlock(cm2.TILE, (px, px, px), not i, j, False))
     px += 0.1
-
-for i in range(len(blocks)):
-    connections.append(save.addConnection(blocks[i], blocks[i+1] if i != len(blocks)-1 else blocks[0]))
 
 saveString = save.exportSave()
 cpy_cb(saveString)

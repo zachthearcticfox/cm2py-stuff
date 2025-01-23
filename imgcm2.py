@@ -32,9 +32,9 @@ jc = 0
 for i in getPixels():
     for j in i:
         blocks.append(save.addBlock(cm2.TILE, (jc+antizc,antizc,ic), properties=[j[0], j[1], j[2], 2], snapToGrid=False))
-        jc += .1
-        antizc += .00005
-    ic += .1
+        jc += .086
+        antizc += .00002
+    ic += .086
     jc = 0
 
 
