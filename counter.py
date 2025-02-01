@@ -6,7 +6,7 @@ blocks = []
 
 connections = []
 
-bits = 512
+bits = 256
 
 for i in range(bits):
     blocks.append(save.addBlock(cm2.FLIPFLOP, (i,0,0)))
