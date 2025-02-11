@@ -1,3 +1,5 @@
+# This file is really just used to copy paste into new files
+
 import cm2py as cm2
 
 save = cm2.Save()
@@ -23,5 +25,5 @@ blocks.append(save.addBlock(cm2.LED, (2,0,4)))
 connections.append(save.addConnection(blocks[2], blocks[4]))
 connections.append(save.addConnection(blocks[3], blocks[5]))
 
-saveString = save.exportSave()
+asciisave = save.exportSave()
 print(saveString)
