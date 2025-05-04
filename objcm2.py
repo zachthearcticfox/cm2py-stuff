@@ -6,6 +6,7 @@ blocks = []
 connections = []
 
 fnm = input('Enter File path: ')
+plusyoff = int(input('+Y Offset: '))
 
 with open(fnm, 'rt') as objf:
     f = objf.read()
@@ -21,6 +22,7 @@ with open(fnm, 'rt') as objf:
                 
             try:
                 splitl[1], splitl[2] = splitl[2], splitl[1]
+                splitl[1] = splitl[1] + plusyoff
                 blocks.append(save.addBlock(cm2.TILE, tuple(splitl), False, [255,255,255, 2], snapToGrid=False))
             except AssertionError as e:
                 blocks.append(save.addBlock(cm2.TILE, (0,0,0), snapToGrid=True))

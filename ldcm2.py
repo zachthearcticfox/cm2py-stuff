@@ -13,7 +13,7 @@ def draw(x0,y0,x1,y1):
         for i in range(dx+1):
             blocks.append(save.addBlock(cm2.TILE, (x0+i,0,round(y0 + i * m))))
 
-draw(0,0,32,16)
+draw(0,0,29,16)
 
 saveString = save.exportSave()
 print(saveString)

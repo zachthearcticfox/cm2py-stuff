@@ -17,38 +17,38 @@ ores = (
     ("Ruby", 5, [255,5,5,9])
 )
 
-for i in range(40000):
+for i in range(300):
     match rni(1,2):
         case 1:
-            blocks.append(save.addBlock(cm2.TILE, [rni(1, 75), rni(1,75), rni(1,75)], False, ores[0][2]))
+            blocks.append(save.addBlock(cm2.TILE, [rni(1, 10), rni(1,10), rni(1,10)], False, ores[0][2]))
             continue
         case _: ...#print('You didn\'t get: Stone')
-    match rni(1,20):
+    match rni(1,10):
         case 1:
-            blocks.append(save.addBlock(cm2.TILE, [rni(1, 75), rni(1,75), rni(1,75)], False, ores[1][2]))
+            blocks.append(save.addBlock(cm2.TILE, [rni(1, 10), rni(1,10), rni(1,10)], False, ores[1][2]))
             continue
         case _: ...#print('You didn\'t get: Iron')
-    match rni(1,50):
+    match rni(1,35):
         case 1:
-            blocks.append(save.addBlock(cm2.TILE, [rni(1, 75), rni(1,75), rni(1,75)], False, ores[2][2]))
+            blocks.append(save.addBlock(cm2.TILE, [rni(1, 10), rni(1,10), rni(1,10)], False, ores[2][2]))
             continue
         case _: ...#print('You didn\'t get: Gold')
-    match rni(1,125):
+    match rni(1,75):
         case 1:
-            blocks.append(save.addBlock(cm2.TILE, [rni(1, 75), rni(1,75), rni(1,75)], False, ores[3][2]))
+            blocks.append(save.addBlock(cm2.TILE, [rni(1, 10), rni(1,10), rni(1,10)], False, ores[3][2]))
             continue
         case _: ...#print('You didn\'t get: Diamond')
-    match rni(1,240):
+    match rni(1,200):
         case 1:
-            blocks.append(save.addBlock(cm2.TILE, [rni(1, 75), rni(1,75), rni(1,75)], False, ores[4][2]))
+            blocks.append(save.addBlock(cm2.TILE, [rni(1, 10), rni(1,10), rni(1,10)], False, ores[4][2]))
             continue
         case _: ...#print('You didn\'t get: Emerald')
-    match rni(1,370):
+    match rni(1,310):
         case 1:
-            blocks.append(save.addBlock(cm2.TILE, [rni(1, 75), rni(1,75), rni(1,75)], False, ores[5][2]))
+            blocks.append(save.addBlock(cm2.TILE, [rni(1, 10), rni(1,10), rni(1,10)], False, ores[5][2]))
             continue
         case _: ...#print('You didn\'t get: Emerald')
-    blocks.append(save.addBlock(cm2.TILE, [rni(1, 75), rni(1,75), rni(1,75)], False, ores[0][2]))
+    blocks.append(save.addBlock(cm2.TILE, [rni(1, 10), rni(1,10), rni(1,10)], False, ores[0][2]))
 
 saveString = save.exportSave()
 cb.copy(saveString)

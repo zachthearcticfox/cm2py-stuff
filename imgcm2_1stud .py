@@ -16,7 +16,6 @@ def getPixels():
     return [pix[n:n+w] for n in range(0, w*h, w)]
 
 img = img.transpose(Image.FLIP_TOP_BOTTOM)
-img = img.transpose(Image.FLIP_LEFT_RIGHT)
 
 pixels = list(getPixels())
 
@@ -30,7 +29,7 @@ jc = 0
 
 for i in getPixels():
     for j in i:
-        blocks.append(save.addBlock(cm2.TILE, (jc,ic-int(imgresy),0), properties=[j[0], j[1], j[2], 2], snapToGrid=True))
+        blocks.append(save.addBlock(cm2.TILE, (jc,0,ic-int(imgresy)), properties=[j[0], j[1], j[2], 2], snapToGrid=True))
         jc += 1
     ic += 1
     jc = 0
